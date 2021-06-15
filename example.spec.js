@@ -1,5 +1,5 @@
+jest.useFakeTimers();
 const puppeteer = require("puppeteer");
-
 class Example {
   async start() {
     const browser = await puppeteer.launch({
@@ -35,16 +35,26 @@ describe("Jest Puppeteer test", () => {
     example = new Example();
   });
 
-  it('Should be able get title "Assistir Lista de Animes - Online em FHD"', () => {
-    example.start().then(() => {
-      expect(example.title).toBe("Assistir Lista de Animes - Online em FHD");
-    });
-  });
+  it(
+    'Should be able get title "Assistir Lista de Animes - Online em FHD"',
+    (done) => {
+      example.start().then(() => {
+        expect(example.title).toBe("Assistir Lista de Animes - Online em FHD");
+        done();
+      });
+    },
+    1000 * 60 * 30
+  );
 
-  it("Should be able get animes names", () => {
-    example.start().then(() => {
-      expect(typeof example.names).toBe("object");
-      expect(example.names.length > 0).toBe(true);
-    });
-  });
+  it(
+    "Should be able get animes names",
+    (done) => {
+      example.start().then(() => {
+        expect(typeof example.names).toBe("object");
+        expect(example.names.length > 0).toBe(true);
+        done();
+      });
+    },
+    1000 * 60 * 30
+  );
 });
