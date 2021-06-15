@@ -5,7 +5,7 @@
   "license": "MIT",
   "typings": "module",
   "scripts": {
-    "test:e2e": "jest example.spec.js"
+    "test": "jest example.spec.js"
   },
   "dependencies": {
     "puppeteer": "^10.0.0"
