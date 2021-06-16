@@ -3,7 +3,7 @@ const puppeteer = require("puppeteer");
 class Example {
   async start() {
     const browser = await puppeteer.launch({
-      args: ["--no-sandbox"],
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
       executablePath: process.env.PUPPETEER_EXEC_PATH, // set by docker container
       headless: true,
     });
