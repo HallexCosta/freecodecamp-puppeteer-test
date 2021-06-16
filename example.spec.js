@@ -37,37 +37,21 @@ describe("Jest Puppeteer test", () => {
 
   it(
     'Should be able get title "Assistir Lista de Animes - Online em FHD"',
-    (done) => {
-      example
-        .start()
-        .then(() => {
-          expect(example.title).toBe(
-            "2321Assistir Lista de Animes - Online em FHD"
-          );
-          done();
-        })
-        .catch((e) => {
-          console.log(e);
-          done();
-        });
+    async () => {
+      await example.start();
+
+      expect(example.title).toBe("Assistir Lista de Animes - Online em FHD");
     },
     10000 * 60 * 3
   );
 
   it(
     "Should be able get animes names",
-    (done) => {
-      example
-        .start()
-        .then(() => {
-          expect(typeof example.names).toBe("object");
-          expect(example.names.length > 0).toBe(true);
-          done();
-        })
-        .catch((e) => {
-          console.log(e);
-          done();
-        });
+    async () => {
+      await example.start();
+
+      expect(typeof example.names).toBe("object");
+      expect(example.names.length > 0).toBe(true);
     },
     10000 * 60 * 30
   );
