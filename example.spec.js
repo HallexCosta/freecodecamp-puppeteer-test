@@ -42,7 +42,7 @@ describe("Jest Puppeteer test", () => {
         .start()
         .then(() => {
           expect(example.title).toBe(
-            "Assistir Lista de Animes - Online em FHD"
+            "2321Assistir Lista de Animes - Online em FHD"
           );
           done();
         })
