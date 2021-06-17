@@ -15,6 +15,9 @@ class Example {
       timeout: 0,
       waitUntil: "networkidle2",
     });
+    await page.setUserAgent(
+      "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+    );
 
     this.title = await page.title();
 
